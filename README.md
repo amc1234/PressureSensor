@@ -1,2 +1,2 @@
 # PressureSensor
-A pressure sensitive mat that monitors patient data to prevent pressure ulcers from developing bases on the Braden Scale.
+A pressure sensitive mat that monitors patient data to prevent pressure ulcers from developing based on the Braden Scale.

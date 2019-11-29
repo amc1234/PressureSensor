@@ -1,2 +1,2 @@
 # PressureSensor
-Code for a pressure sensitive seat that warns patients if they’re at  risk of developing bed ulcers.
+A pressure sensitive mat that monitors patient data to prevent pressure ulcers from developing bases on the Braden Scale.

@@ -22,7 +22,7 @@ using System.IO.Ports;
 using System.Globalization;
 using System.Windows.Forms;
 
-namespace PressureMap
+namespace vs_code
 {
     public partial class Form1 : Form
     {
@@ -30,10 +30,10 @@ namespace PressureMap
         String[] splitter = new String[9];                         //String array to split str 
         char[] separator = new char[] { '@' };                     //Separator sent through the Arduino string to assign values to their corresponding variable 
         float[] pressure = new float[9];                           //Array to hold the pressure at the sensors
-
+        
         public Form1()
         {
-            InitializeComponent();                                 //Initialization
+            InitializeComponent();
             serialPort1.Open();                                    //Open Serial Port   
             Thread Loop_Thread = new Thread(Loop);                 //Begin Thread
             Loop_Thread.Start();
@@ -50,9 +50,9 @@ namespace PressureMap
 
         public void Display()                                      //Display values at each sensor obtained from backend Arduino code
         {
-            for(int i = 0; i < pressure.Length; i++)
+            for (int i = 0; i < pressure.Length; i++)
             {
-                if(pressure[i] >= 200)
+                if (pressure[i] >= 682)
                 {
                     switch (i)                                     //Set pressure map colour. Options are red, orange, yellow where red means there's a lot of pressure at that sensor
                     {
@@ -80,10 +80,13 @@ namespace PressureMap
                         case 7:
                             Sensor_8.BackColor = Color.Red;
                             break;
+                        case 8:
+                            Sensor_9.BackColor = Color.Red;
+                            break;
                     }
 
                 }
-                else if(pressure[i] < 200 && pressure[i] >= 10)
+                else if (pressure[i] < 682 && pressure[i] >= 341)
                 {
                     switch (i)
                     {
@@ -111,6 +114,42 @@ namespace PressureMap
                         case 7:
                             Sensor_8.BackColor = Color.Orange;
                             break;
+                        case 8:
+                            Sensor_9.BackColor = Color.Orange;
+                            break;
+                    }
+                }
+                else if (pressure[i] < 341)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            Sensor_1.BackColor = Color.Yellow;
+                            break;
+                        case 1:
+                            Sensor_2.BackColor = Color.Yellow;
+                            break;
+                        case 2:
+                            Sensor_3.BackColor = Color.Yellow;
+                            break;
+                        case 3:
+                            Sensor_4.BackColor = Color.Yellow;
+                            break;
+                        case 4:
+                            Sensor_5.BackColor = Color.Yellow;
+                            break;
+                        case 5:
+                            Sensor_6.BackColor = Color.Yellow;
+                            break;
+                        case 6:
+                            Sensor_7.BackColor = Color.Yellow;
+                            break;
+                        case 7:
+                            Sensor_8.BackColor = Color.Yellow;
+                            break;
+                        case 8:
+                            Sensor_9.BackColor = Color.Yellow;
+                            break;
                     }
                 }
             }
@@ -133,15 +172,23 @@ namespace PressureMap
 
             Thread.Sleep(500);                                                                              //Delay so to not spam the serial port. Delay matches Arduino delay.
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
+        private void Sensor_1_Click(object sender, EventArgs e){}
 
-        private void BtnSensor1_Click(object sender, EventArgs e)
-        {
-            Sensor_1.BackColor = Color.Red;
-        }
+        private void Sensor_2_Click(object sender, EventArgs e){}
+
+        private void Sensor_3_Click(object sender, EventArgs e){}
+
+        private void Sensor_4_Click(object sender, EventArgs e){}
+
+        private void Sensor_5_Click(object sender, EventArgs e){}
+
+        private void Sensor_6_Click(object sender, EventArgs e){}
+
+        private void Sensor_7_Click(object sender, EventArgs e){}
+
+        private void Sensor_8_Click(object sender, EventArgs e){}
+
+        private void Sensor_9_Click(object sender, EventArgs e){}
     }
 }
-

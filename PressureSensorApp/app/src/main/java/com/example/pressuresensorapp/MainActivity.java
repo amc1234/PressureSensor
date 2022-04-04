@@ -73,4 +73,62 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    //********** Mariam: Parse data read through BLE and send to UI *************///
+    //TO DO:
+    //Setup Loop
+    //Get the id of the view objects
+
+    public void messageRead(Message msg) {
+        String arduinoMsg = msg.obj.toString(); //read message from arduino
+        char[] separator = new char[] {'@'};
+        String[] splitter = arduinoMsg.Split(separator, 9); //Split the string, values are separated by '@'
+
+        //Assign split string to corresponding values
+        float[] sensorData = new float[9];
+        for (int i = 0; i < 9; i++)
+        {
+            sensorData[i] = float.parseFloat(splitter[i]);
+        }
+        Thread.Sleep(500); //Wait 500 milliseconds before doing anything, matches with the Arduino
+        //delay
+    }
+    public void handleDisplay(int[] sensorData) {
+        //change color of view objects based on sensor readings
+        //default color is yellow
+        //sensor_1 = view.findViewById(R.id.('id_name'));
+    }
+        for(int i = 0; i < sensorData.Length; i++)
+        {
+            if(sensorData[i] >= 600)
+            {
+                switch(i)
+                {
+                    case 0: sensor_1.setBackgroundColor(getResources().getColor(R.color.orange)); break;
+                    case 1: sensor_2.setBackgroundColor(getResources().getColor(R.color.orange)); break;
+                    case 2: sensor_3.setBackgroundColor(getResources().getColor(R.color.orange)); break;
+                    case 3: sensor_4.setBackgroundColor(getResources().getColor(R.color.orange)); break;
+                    case 4: sensor_5.setBackgroundColor(getResources().getColor(R.color.orange)); break;
+                    case 5: sensor_6.setBackgroundColor(getResources().getColor(R.color.orange)); break;
+                    case 6: sensor_7.setBackgroundColor(getResources().getColor(R.color.orange)); break;
+                    case 7: sensor_8.setBackgroundColor(getResources().getColor(R.color.orange)); break;
+                    case 8: sensor_9.setBackgroundColor(getResources().getColor(R.color.orange)); break;
+                }
+            }
+            if (sensorData[i] >= 1000)
+            {
+                switch (i)
+                {
+                    case 0: sensor_1.setBackgroundColor(getResources().getColor(R.color.red)); break;
+                    case 1: sensor_2.setBackgroundColor(getResources().getColor(R.color.red)); break;
+                    case 2: sensor_3.setBackgroundColor(getResources().getColor(R.color.red)); break;
+                    case 3: sensor_4.setBackgroundColor(getResources().getColor(R.color.red)); break;
+                    case 4: sensor_5.setBackgroundColor(getResources().getColor(R.color.red)); break;
+                    case 5: sensor_6.setBackgroundColor(getResources().getColor(R.color.red)); break;
+                    case 6: sensor_7.setBackgroundColor(getResources().getColor(R.color.red)); break;
+                    case 7: sensor_8.setBackgroundColor(getResources().getColor(R.color.red)); break;
+                    case 8: sensor_9.setBackgroundColor(getResources().getColor(R.color.red)); break;
+                }
+            }
+    }
 }

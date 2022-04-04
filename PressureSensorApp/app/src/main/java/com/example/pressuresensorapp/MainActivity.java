@@ -73,4 +73,110 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    public boolean changingColours ( int [] pressure )
+    {
+        for (int i = 0; i < pressure.length; i++) {
+            if (pressure[i] >= 682)
+            {
+                switch (i)
+                {
+                    case 0:
+                        square1.setColorFilter(getResources().getColor(R.color.red));
+                        break;
+                    case 1:
+                        square2.setColorFilter(getResources().getColor(R.color.red));
+                        break;
+                    case 2:
+                        square3.setColorFilter(getResources().getColor(R.color.red));
+                        break;
+                    case 3:
+                        square4.setColorFilter(getResources().getColor(R.color.red));
+                        break;
+                    case 4:
+                        square5.setColorFilter(getResources().getColor(R.color.red));
+                        break;
+                    case 5:
+                        square6.setColorFilter(getResources().getColor(R.color.red));
+                        break;
+                    case 6:
+                        square7.setColorFilter(getResources().getColor(R.color.red));
+                        break;
+                    case 7:
+                        square8.setColorFilter(getResources().getColor(R.color.red));
+                        break;
+                    case 8:
+                        square9.setColorFilter(getResources().getColor(R.color.red));
+                        break;
+                }
+            }
+            else if (pressure[i] < 682 && pressure[i] >= 341)
+            {
+                switch (i)
+                {
+                    case 0:
+                        square1.setColorFilter(getResources().getColor(R.color.orange));
+                        break;
+                    case 1:
+                        square2.setColorFilter(getResources().getColor(R.color.orange));
+                        break;
+                    case 2:
+                        square3.setColorFilter(getResources().getColor(R.color.orange));
+                        break;
+                    case 3:
+                        square4.setColorFilter(getResources().getColor(R.color.orange));
+                        break;
+                    case 4:
+                        square5.setColorFilter(getResources().getColor(R.color.orange));
+                        break;
+                    case 5:
+                        square6.setColorFilter(getResources().getColor(R.color.orange));
+                        break;
+                    case 6:
+                        square7.setColorFilter(getResources().getColor(R.color.orange));
+                        break;
+                    case 7:
+                        square8.setColorFilter(getResources().getColor(R.color.orange));
+                        break;
+                    case 8:
+                        square9.setColorFilter(getResources().getColor(R.color.orange));
+                        break;
+                }
+            }
+            else if (pressure[i] < 341)
+            {
+                switch (i)
+                {
+                    case 0:
+                        square1.setColorFilter(getResources().getColor(R.color.yellow));
+                        break;
+                    case 1:
+                        square2.setColorFilter(getResources().getColor(R.color.yellow));
+                        break;
+                    case 2:
+                        square3.setColorFilter(getResources().getColor(R.color.yellow));
+                        break;
+                    case 3:
+                        square4.setColorFilter(getResources().getColor(R.color.yellow));
+                        break;
+                    case 4:
+                        square5.setColorFilter(getResources().getColor(R.color.yellow));
+                        break;
+                    case 5:
+                        square6.setColorFilter(getResources().getColor(R.color.yellow));
+                        break;
+                    case 6:
+                        square7.setColorFilter(getResources().getColor(R.color.yellow));
+                        break;
+                    case 7:
+                        square8.setColorFilter(getResources().getColor(R.color.yellow));
+                        break;
+                    case 8:
+                        square9.setColorFilter(getResources().getColor(R.color.yellow));
+                        break;
+                }
+            }
+        }
+        return true;
+    }
 }

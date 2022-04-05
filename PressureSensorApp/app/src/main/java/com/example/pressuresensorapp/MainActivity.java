@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            //************************ !Mariam Line Parsing! ****************//
+            //************************ Mariam Line Parsing ****************//
             public void messageRead(String arduinoMsg) {
                 char[] separator = new char[]{'@'};
                 String[] splitter = arduinoMsg.split(String.valueOf(separator), 9); //Split the string, values are separated by '@'

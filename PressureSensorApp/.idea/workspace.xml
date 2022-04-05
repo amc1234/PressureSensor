@@ -9,16 +9,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e30f9a70-ace6-4f0d-bc4e-1e92d5cbea13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bluetooth/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bluetooth/DeviceInfoModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bluetooth/DeviceListAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bluetooth/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bluetooth/SelectDeviceActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bluetooth/bluetooth_setup.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bluetooth/device_info_layout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bluetooth/select_device_activity.xml" beforeDir="false" />
+    <list default="true" id="f6cba249-faa2-4b01-ba52-f7770482dbae" name="Default Changelist" comment="update files">
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pressuresensorapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pressuresensorapp/MainActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +18,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[92PAY03494]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\maria\.android\avd\Pixel_4_XL_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -146,6 +138,14 @@
       <option name="presentableId" value="Default" />
       <updated>1648927339090</updated>
     </task>
+    <task id="LOCAL-00001" summary="update files">
+      <created>1649116576827</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649116576827</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,5 +159,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update files" />
+    <option name="LAST_COMMIT_MESSAGE" value="update files" />
   </component>
 </project>

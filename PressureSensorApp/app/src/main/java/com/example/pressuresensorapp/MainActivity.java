@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
     private final static int CONNECTING_STATUS = 1; // used in bluetooth handler to identify message status
     private final static int MESSAGE_READ = 2; // used in bluetooth handler to identify message update
 
+    float[] sensorData = new float[9];//stores sensor data
+
     private ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
@@ -162,7 +164,9 @@ public class MainActivity extends AppCompatActivity {
 
                     case MESSAGE_READ:
                         String arduinoMsg = msg.obj.toString(); // Read message from Arduino
-                        switch (arduinoMsg.toLowerCase()) {
+                        messageRead(arduinoMsg); //send data to parser
+
+                        /*switch (arduinoMsg.toLowerCase()) {
                             case "led is turned on":
                                 imageView.setBackgroundColor(getResources().getColor(R.color.colorOn));
                                 textViewInfo.setText("Arduino Message : " + arduinoMsg);
@@ -171,9 +175,22 @@ public class MainActivity extends AppCompatActivity {
                                 imageView.setBackgroundColor(getResources().getColor(R.color.colorOff));
                                 textViewInfo.setText("Arduino Message : " + arduinoMsg);
                                 break;
-                        }
+                        }*/
                         break;
                 }
+            }
+
+            //************************ Mariam Line Parsing ****************//
+            public void messageRead(String arduinoMsg) {
+                char[] separator = new char[]{'@'};
+                String[] splitter = arduinoMsg.split(String.valueOf(separator), 9); //Split the string, values are separated by '@'
+
+                //Assign split string to corresponding value
+                for (int i = 0; i < 9; i++) {
+                    sensorData[i] = Float.parseFloat(splitter[i]);
+                }
+                Thread.sleep(500); //Wait 500 milliseconds before doing anything, matches with the Arduino
+                //delay
             }
         };
 
@@ -273,6 +290,16 @@ public class MainActivity extends AppCompatActivity {
             // Cancel discovery because it otherwise slows down the connection.
             BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
             bluetoothAdapter.cancelDiscovery();
             try {
                 // Connect to the remote device through the socket. This call blocks
